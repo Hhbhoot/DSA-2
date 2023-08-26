@@ -43,22 +43,16 @@ int fisrtinsert(int val)
         r = f = 0;
         arr[r] = val;
     }
-    else if (r >= n - 1)
+    else if (f == 0)
     {
-        printf("Queue is Full..\n");
+        printf("Position is Filled..\n");
     }
     else if (f > 0)
 
     {
 
-        f = 0;
+        f--;
         arr[f] = val;
-    }
-
-    else
-    {
-
-        printf("Position is filled..\n");
     }
 }
 int lastdel()
