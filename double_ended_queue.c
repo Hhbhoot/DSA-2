@@ -21,7 +21,7 @@ int insert(int val)
         arr[r] = val;
     }
 }
-int deleteend()
+int delete()
 {
     if (f < 0)
     {
@@ -47,19 +47,18 @@ int fisrtinsert(int val)
     {
         printf("Queue is Full..\n");
     }
-    else if(f > 0)
-    
+    else if (f > 0)
+
     {
 
         f = 0;
         arr[f] = val;
-        
     }
 
-    else{
+    else
+    {
 
         printf("Position is filled..\n");
-        
     }
 }
 int lastdel()
@@ -83,7 +82,7 @@ int display()
 {
     if (f < 0)
     {
-        printf("Queue is Empty...");
+        printf("Queue is Empty...\n");
     }
     else
     {
@@ -95,21 +94,52 @@ int display()
 }
 int main()
 {
-   fisrtinsert(50);
-   insert(100);
-   deleteend();
-   fisrtinsert(1);
-   insert(20);
-   insert(20);
-   deleteend();
-//    insert(20);
-   fisrtinsert(10);
-   
-   
-   
 
+    int ch, val;
 
-//    lastdel();
-   display();   
+    do
+    {
+
+        printf("1.Insert In Next Position \n");
+        printf("2.Insert in First Position\n");
+        printf("3.Delete From Last Position\n");
+        printf("4.Delete From First Position\n");
+        printf("5.Display Queue \n");
+        printf("\n");
+
+        printf("Enter Your Choice...\n");
+        scanf("%d", &ch);
+
+        switch (ch)
+        {
+        case 1:
+            printf("Enter Value :");
+            scanf("%d", &val);
+            insert(val);
+            break;
+
+        case 2:
+            printf("Enter Value :");
+            scanf("%d", &val);
+            fisrtinsert(val);
+            break;
+
+        case 3:
+            lastdel();
+
+            break;
+
+        case 4:
+            delete ();
+            break;
+
+        case 5:
+            display();
+            break;
+
+        default:
+            printf("Wrong input . Enter Input  Again..\n");
+            break;
+        }
+    } while (ch != 5);
 }
-    
