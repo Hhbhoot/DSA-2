@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define n 5
+#define n 10
 
 void merge(int arr[], int mid, int l, int h)
 {
-    int brr[100], i = 0, j = mid + 1, k = 0;
+    int brr[100], i = l, j = mid + 1, k = l;
 
     while (i <= mid && j <= h)
     {
@@ -21,25 +21,26 @@ void merge(int arr[], int mid, int l, int h)
             j++;
         }
     }
-
-    while (i <= mid)
-    {
-        brr[k] = arr[i];
-        k++;
-        i++;
-    }
-    while (j <= h)
-    {
-        brr[k] = arr[j];
-        k++;
-        j++;
-    }
-
-    for (int i = 0; i <= h; i++)
+    
+        while (i <= mid)
+        {
+            brr[k] = arr[i];
+            k++;
+            i++;
+        }
+        while (j <= h)
+        {
+            brr[k] = arr[j];
+            k++;
+            j++;
+        }
+    
+    for (int i = l; i <= h; i++)
     {
         arr[i] = brr[i];
     }
 }
+
 
 int mergesort(int arr[], int l, int h)
 {
@@ -63,7 +64,7 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        arr[i] = (rand() % 9999) + 1;
+        arr[i] = (rand() % 15) + 1;
 
         printf("%d ", arr[i]);
     }
