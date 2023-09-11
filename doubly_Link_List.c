@@ -138,7 +138,7 @@ void Display()
     else
     {
          ptr -> next ;
-        while (ptr !=  )
+        while (ptr != NULL )
         {  
 
             printf("%d ", ptr->data);
